@@ -17,6 +17,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { ImprintModule } from '@app/imprint/imprint.module';
 import { StarsModule } from '@app/stars/stars.module';
 import { UniversesModule } from '@app/universes/universesmodule';
+import { CreateComponent } from './universes/create/create.component';
+import { DetailComponent } from './universes/detail/detail.component';
 
 @NgModule({
   imports: [
@@ -36,7 +38,7 @@ import { UniversesModule } from '@app/universes/universesmodule';
     LoginModule,
     AppRoutingModule
   ],
-  declarations: [AppComponent],
+  declarations: [AppComponent, CreateComponent, DetailComponent],
   providers: [
   ],
   bootstrap: [AppComponent]

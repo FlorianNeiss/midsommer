@@ -1,0 +1,40 @@
+<div class="container-fluid">
+  <div class="jumbotron text-center">
+    <h1>
+      <span translate>Create a universe!</span>
+    </h1>
+    <form #registrationForm="ngForm">
+      <div class="form-group" [class.has-warning]="!idUni.valid && (idUni.dirty || idUni.touched)">
+        <label class="form-control-label" for="idUni">idUni</label>
+        <input name="idUni" #idUni="ngModel" type="text" class="form-control" [class.form-control-warning]="!idUni.valid && (idUni.dirty || idUni.touched)"
+          placeholder="Id eingeben" [(ngModel)]="universe.id" required minlength="1">
+        <div *ngIf="!idUni.valid && (idUni.dirty || idUni.touched)" class="form-control-feedback">Id darf nicht leer sein und hat eine Mindestlänge von 1.</div>
+      </div>
+      <div class="form-group" [class.has-warning]="!nameUni.valid && (nameUni.dirty || nameUni.touched)">
+        <label class="form-control-label" for="nameUni">nameUni</label>
+        <input name="nameUni" #nameUni="ngModel" type="text" class="form-control" [class.form-control-warning]="!nameUni.valid && (nameUni.dirty || nameUni.touched)"
+          placeholder="Name eingeben" [(ngModel)]="universe.name" required minlength="3">
+        <div *ngIf="!nameUni.valid && (nameUni.dirty || nameUni.touched)" class="form-control-feedback">Name darf nicht leer sein und hat eine Mindestlänge von drei.</div>
+      </div>
+      <div class="form-group" [class.has-warning]="!maxSize.valid && (maxSized.dirty || maxSize.touched)">
+        <label class="form-control-label" for="maxSize">maxSize</label>
+        <input name="maxSize" #maxSize="ngModel" type="text" class="form-control" [class.form-control-warning]="!maxSize.valid && (maxSize.dirty || maxSize.touched)"
+          placeholder="maxSize eingeben" [(ngModel)]="universe.maxSize" required minlength="1">
+        <div *ngIf="!maxSize.valid && (maxSize.dirty || maxSize.touched)" class="form-control-feedback">MaxSize darf nicht leer sein und hat eine Mindestlänge von 1.</div>
+      </div>
+
+      <div class="lead">
+        <div class="btn-group">
+          <button class="btn btn-success" (click)="save()" [disabled]="!registrationForm.valid">
+            <i class="fa fa-fw fa-save"></i>
+            <span class="ml-1">Speichern</span>
+          </button>
+          <button class="btn btn-warning" routerLink="/universes">
+            <i class="fa fa-fw fa-times"></i>
+            <span class="ml-1">Abbrechen</span>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

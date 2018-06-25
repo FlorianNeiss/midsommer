@@ -14,6 +14,7 @@
       <div class="col-sm-4">{{universe?.id}}</div>
       <div class="col-sm-4">{{universe?.maxSize}}</div>
     </div> -->
+    <button class="btn btn-primary" routerLink="/universes/create" >Create</button>
 
     <div class="table-responsive">
       <table class="table">
@@ -22,6 +23,7 @@
             <th>Name</th>
             <th>id</th>
             <th>MaxSize</th>
+            <th>Detail</th>
           </tr>
         </thead>
         <tbody>
@@ -29,6 +31,7 @@
             <td>{{universe?.name}}</td>
             <td>{{universe?.id}}</td>
             <td>{{universe?.maxSize}}</td>
+            <td><button class="btn btn-primary" (click)="navigateToDetails(universe.id)">Details</button></td>
           </tr>
         </tbody>
       </table>

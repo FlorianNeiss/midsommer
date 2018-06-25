@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Universe } from '@app/models/universe';
 import { UniverseApiService } from '@app/core/api-services/universe-api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-universes',
@@ -12,7 +13,8 @@ export class UniversesComponent implements OnInit {
   public universes: Universe [];
 
   constructor(
-    private universeService: UniverseApiService
+    private universeService: UniverseApiService,
+    private router: Router
   ) { this.universes = [];  }
 
   ngOnInit() {
@@ -24,4 +26,9 @@ export class UniversesComponent implements OnInit {
       error => console.error(error)
     );
   }
+
+  navigateToDetails(universeId: string) {
+    this.router.navigate(['/universes/detail', universeId]);
+  }
+  
 }
