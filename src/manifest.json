@@ -1,14 +1,14 @@
 {
-  "name": "ngX-Rocket",
-  "short_name": "ngX-Rocket",
+  "name": "as_ideas_eng_logo",
+  "short_name": "as_ideas_eng_logo",
   "theme_color": "#488aff",
   "background_color": "#488aff",
   "scope": "/",
   "start_url": "/",
   "display": "standalone",
   "icons": [{
-    "src": "assets/ngx-rocket-logo.png",
-    "sizes": "512x512",
+    "src": "assets/as_ideas_eng_logo_small.png",
+    "sizes": "542x449",
     "type": "image/png"
   }]
 }

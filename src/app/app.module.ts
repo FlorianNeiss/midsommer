@@ -14,6 +14,9 @@ import { AboutModule } from './about/about.module';
 import { LoginModule } from './login/login.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ImprintModule } from '@app/imprint/imprint.module';
+import { StarsModule } from '@app/stars/stars.module';
+import { UniversesModule } from '@app/universes/universesmodule';
 
 @NgModule({
   imports: [
@@ -27,6 +30,9 @@ import { AppRoutingModule } from './app-routing.module';
     SharedModule,
     HomeModule,
     AboutModule,
+    ImprintModule,
+    StarsModule,
+    UniversesModule,
     LoginModule,
     AppRoutingModule
   ],
