@@ -1,3 +1,31 @@
-<p>
-  stars works!
-</p>
+<div class="container-fluid">
+    <div class="jumbotron text-center">
+      <h1>
+        <img class="logo" src="assets/as_ideas_eng_logo_small.png" alt="as_ideas logo" />
+        <span translate>Hello Stars!</span>
+      </h1>
+ 
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>id</th>
+              <th>universeId</th>
+              <th>name</th>
+              <th>color</th>
+              <!-- <th>name of universe</th> -->
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let star of stars.stars">
+              <td>{{star?.id}}</td>
+              <td>{{star?.universeId}}</td>
+              <td>{{star?.name}}</td>
+              <td [style.color]="star.color">{{star?.color}}</td>
+              <!-- <td [innerHtml]="getNameOfUniverseById(star?.id)"></td> -->
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

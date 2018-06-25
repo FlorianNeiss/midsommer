@@ -1,3 +1,37 @@
-<p>
-  universes works!
-</p>
+<div class="container-fluid">
+  <div class="jumbotron text-center">
+    <h1>
+      <img class="logo" src="assets/as_ideas_eng_logo_small.png" alt="as_ideas logo" />
+      <span translate>Hello universes!</span>
+    </h1>
+    <!-- <div class="row">
+      <div class="col-sm-4 btn-primary">Name</div>
+      <div class="col-sm-4 btn-primary">Id</div>
+      <div class="col-sm-4 btn-primary">MaxSize</div>
+    </div>
+    <div *ngFor="let universe of universes.universes" class="row">
+      <div class="col-sm-4">{{universe?.name}}</div>
+      <div class="col-sm-4">{{universe?.id}}</div>
+      <div class="col-sm-4">{{universe?.maxSize}}</div>
+    </div> -->
+
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>id</th>
+            <th>MaxSize</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let universe of universes.universes">
+            <td>{{universe?.name}}</td>
+            <td>{{universe?.id}}</td>
+            <td>{{universe?.maxSize}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

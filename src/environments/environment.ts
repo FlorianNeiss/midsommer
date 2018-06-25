@@ -7,6 +7,7 @@
 import env from './.env';
 
 export const environment = {
+  apiBaseUrl: 'https://happy-stars.herokuapp.com',
   production: false,
   version: env.npm_package_version + '-dev',
   serverUrl: '/api',

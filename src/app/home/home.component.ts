@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { finalize } from 'rxjs/operators';
 
-import { QuoteService } from './quote.service';
+import { Universe } from '@app/models/universe';
+import { UniverseApiService } from '@app/core/api-services/universe-api.service';
 
 @Component({
   selector: 'app-home',
@@ -10,16 +11,21 @@ import { QuoteService } from './quote.service';
 })
 export class HomeComponent implements OnInit {
 
-  quote: string;
+  public universe: Universe;
   isLoading: boolean;
 
-  constructor(private quoteService: QuoteService) { }
+  constructor(private universeService: UniverseApiService) { }
 
   ngOnInit() {
     this.isLoading = true;
-    this.quoteService.getRandomQuote({ category: 'dev' })
-      .pipe(finalize(() => { this.isLoading = false; }))
-      .subscribe((quote: string) => { this.quote = quote; });
+    this.universeService.getById('1')
+    .pipe(finalize(() => { this.isLoading = false; }))
+    .subscribe(
+      universe => {
+        this.universe = universe;
+      },
+      error => console.error(error)
+    );
   }
 
 }

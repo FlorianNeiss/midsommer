@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Universe } from '@app/models/universe';
+import { UniverseApiService } from '@app/core/api-services/universe-api.service';
 
 @Component({
   selector: 'app-universes',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UniversesComponent implements OnInit {
 
-  constructor() { }
+  public universes: Universe [];
+
+  constructor(
+    private universeService: UniverseApiService
+  ) { this.universes = [];  }
 
   ngOnInit() {
+    this.universeService.get()
+    .subscribe(
+      universes => {
+        this.universes = universes;
+      },
+      error => console.error(error)
+    );
   }
-
 }
